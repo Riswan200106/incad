@@ -101,7 +101,7 @@
     // Vendor carousel
     $('.vendor-carousel').owlCarousel({
         loop: true,
-        margin: 45,
+        margin: 85,
         dots: false,
         loop: true,
         autoplay: true,
@@ -111,16 +111,88 @@
                 items:2
             },
             576:{
-                items:4
+                items:3
             },
             768:{
-                items:6
+                items:4
             },
             992:{
-                items:8
+                items:6
             }
         }
     });
     
 })(jQuery);
 
+
+
+
+$(document).ready(function(){
+    $(".vendor-carousel").owlCarousel({
+        items: 6,  // Show 6 items at once
+        loop: true,  // Loop the carousel
+        margin: 0,  // Remove space between items
+        autoplay: true,  // Enable autoplay
+        autoplayTimeout: 2000,  // Set autoplay delay (3 seconds)
+        autoplayHoverPause: true,  // Pause autoplay on hover
+        responsive: {
+            0: {
+                items: 1  // 1 item per slide on small screens
+            },
+            600: {
+                items: 2  // 2 items per slide on medium screens
+            },
+            1000: {
+                items: 6  // 6 items per slide on larger screens
+            }
+        }
+    });
+});
+
+//who we are
+
+
+document.querySelectorAll('.icon-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        const hoverContent = document.querySelector('.hover-content .hover-paragraph');
+        hoverContent.innerText = item.getAttribute('data-hover-text');
+        document.querySelector('.hover-content').style.display = 'block';
+    });
+
+    item.addEventListener('mouseleave', function() {
+        document.querySelector('.hover-content').style.display = 'none';
+    });
+});
+
+
+//counting animation
+
+document.addEventListener("DOMContentLoaded", function () {
+    function animateCounter(id, start, end, duration) {
+        let element = document.getElementById(id);
+        let range = end - start;
+        let stepTime = Math.abs(Math.floor(duration / range));
+        let startTime = new Date().getTime();
+        let endTime = startTime + duration;
+        let timer;
+
+        function run() {
+            let now = new Date().getTime();
+            let remaining = Math.max((endTime - now) / duration, 0);
+            let value = Math.round(end - remaining * range);
+            element.innerHTML = value;
+            if (value === end) {
+                clearInterval(timer);
+            }
+        }
+
+        timer = setInterval(run, stepTime);
+        run();
+    }
+
+    // Initialize counters with specific end values
+    animateCounter("experience-counter", 0, 25, 2000); // Count to 25
+    animateCounter("products-counter", 0, 150, 2000);  // Count to 150
+    animateCounter("students-counter", 0, 50, 2000);   // Count to 50K (50)
+    animateCounter("customers-counter", 0, 15, 2000);  // Count to 15K (15)
+});

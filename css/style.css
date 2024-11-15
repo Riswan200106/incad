@@ -1,7 +1,54 @@
 /********** Template CSS **********/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    font-family: "Gill Sans Extrabold", sans-serif;
+
+    /* Replace with your chosen font */
+    font-size: 16px;
+    /* Base font size */
+    color: #333;
+    /* Default text color */
+    line-height: 1.6;
+    /* Improves readability */
+}
+
+/* Additional styles for specific elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: " Gill Sans Extrabold, sans-serif";
+
+    /* Ensure all headings use the same font */
+    font-weight: 400;
+    /* Bold headings */
+    color: #0f0f0f;
+    /* Darker color for headings */
+}
+
+p,
+li,
+a,
+span {
+    font-family: "  sans-serif";
+    font-weight: 300;
+    /* Normal weight for paragraph text */
+}
+
 :root {
     --primary: #060636;
-    --secondary: #34AD54;
+    --secondary: #c97d27;
     --light: #EEF9FF;
     --dark: #091E3E;
 }
@@ -220,6 +267,20 @@ h6,
 
 
 /*** Carousel ***/
+/* Hide carousel controls by default */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show carousel controls on hover */
+#header-carousel:hover .carousel-control-prev,
+#header-carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+
 .carousel-caption {
     top: 0;
     left: 0;
@@ -531,11 +592,11 @@ h6,
 /***new***/
 /* Default styling (Desktop) */
 .custom-box {
-    background: rgba(0, 69, 124, 0.7);
+    background: rgba(9, 81, 139, 0.7);
     /* Transparent background */
     border-radius: 10px;
     color: white;
-    height: 120px;
+    height: 110px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -553,7 +614,7 @@ h6,
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(232, 123, 28, 0.7), rgba(0, 69, 124, 0.7));
+    background: linear-gradient(45deg, rgba(15, 12, 207, 0.7), rgba(0, 69, 124, 0.7));
     opacity: 0.7;
     z-index: -1;
 }
@@ -578,13 +639,13 @@ h6,
 
 /* Icon size */
 .icon-box i {
-    color: #E87B1C;
+    color: #da0e29;
     font-size: 24px;
 }
 
 /* Text styling */
 .custom-box h1 {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: #E87B1C;
     margin-bottom: 0;
@@ -643,6 +704,18 @@ h6,
     }
 }
 
+.counter-number {
+    font-size: 50px;
+    /* Adjust font size as needed */
+    font-weight: 900;
+    /* Use a heavy font weight for boldness */
+    color: #E87B1C;
+    /* Adjust color to match the desired style */
+    line-height: 1.2;
+    /* Line height for spacing */
+}
+
+
 /* Adjust Quick Contact Button Style */
 .btn-warning {
     background-color: #E87B1C !important;
@@ -668,7 +741,9 @@ h6,
 
 /* Topbar Styling */
 .topbar {
-    background-color: #343a40;
+    background-color: #091E3E !important;
+
+
     padding: 5px 0;
 }
 
@@ -702,7 +777,7 @@ h6,
 }
 
 .dropdown-item {
-    color: #343a40;
+    color: #0d0e0f;
     padding: 10px;
 }
 
@@ -718,7 +793,7 @@ h6,
 
 .top-info span {
     font-size: 0.8rem;
-    color: #666;
+    color: #e66d0a;
 }
 
 /* Right Section Links and Button */
@@ -747,3 +822,433 @@ h6,
     background-color: #ffffff;
     color: #343a40;
 }
+
+.facts {
+    margin-top: 30px;
+
+    /* Adjust this value as needed */
+}
+
+.display-1 {
+    font-size: 3.5rem;
+    /* Adjust as needed for the main heading size */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.about-text {
+    font-size: 1.25rem;
+    /* Smaller than the main heading */
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 900px;
+    /* Limit width for readability */
+    opacity: 0.85;
+    /* Slight transparency for a softer look */
+}
+
+
+
+.icon-background {
+    background-color: #06A3DA;
+    /* Blue background */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.icon-background i {
+    color: #fafafa;
+    /* Orange icon */
+    font-size: 24px;
+}
+
+.team-social .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 50% opacity */
+    color: #fff;
+    border-radius: 15px;
+    padding: 1px;
+    text-align: center;
+}
+
+/* Remove padding and set full width for the container */
+.container-fluid.py-5 {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.bg-white {
+    padding: 0;
+    margin: 0;
+}
+
+.vendor-carousel {
+    width: 100%;
+    /* Ensures full width */
+    height: 190px;
+    /* Adjust height as needed to make images larger */
+    object-fit: contain;
+    /* Keeps the aspect ratio without cropping */
+}
+
+/* Style for partner logo, adjust spacing between images */
+.partner-logo {
+    max-width: 100%;
+    padding: 10px;
+    /* Adjust padding as needed */
+    height: 120px;
+    /* Adjust this value to increase image height */
+}
+
+/* Carousel item spacing */
+.owl-carousel .owl-item {
+    padding: 10px;
+    /* Adjust as needed for spacing */
+}
+
+/* who we are */
+
+
+/* end of who we are */
+
+/* General Footer Styling */
+footer {
+    font-family: Arial, sans-serif;
+    color: #fff;
+
+}
+
+footer .top_footer {
+    background-color: #343a40;
+    padding-top: 40px;
+
+}
+
+footer .top_footer .container {
+    max-width: 100%;
+}
+
+footer .top_footer .col-lg-3,
+footer .top_footer .col-md-6 {
+    margin-bottom: 30px;
+}
+
+footer .top_footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+footer .top_footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .top_footer ul li {
+    margin-bottom: 10px;
+}
+
+footer .top_footer ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+footer .top_footer ul li a:hover {
+    color: #00bcd4;
+}
+
+footer .top_footer .social-icons {
+    margin-top: 15px;
+}
+
+footer .top_footer .social-icons a {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+footer .top_footer .social-icons a:hover {
+    color: #00bcd4;
+}
+
+footer .bottom_footer {
+    background-color: #222;
+    padding: 20px 0;
+}
+
+footer .bottom_footer .container {
+    max-width: 100%;
+}
+
+footer .bottom_footer .float_left,
+footer .bottom_footer .float_right {
+    float: left;
+    margin: 5px 0;
+}
+
+footer .bottom_footer .float_right {
+    text-align: right;
+}
+
+footer .bottom_footer a {
+    color: #181f86;
+    text-decoration: none;
+}
+
+footer .bottom_footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Linked Image Styling */
+.linked-image {
+    position: relative;
+    width: 100%;
+}
+
+.linked-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    /* Rounded corners for image */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark transparent overlay */
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.linked-image:hover .overlay-text {
+    opacity: 1;
+    /* Overlay appears on hover */
+}
+
+.company-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.followers-count {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.follow-btn {
+    padding: 5px 15px;
+    background-color: #E87B1C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.follow-btn:hover {
+    background-color: #d4741c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 1em;
+    }
+
+    .followers-count,
+    .follow-btn {
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    footer .top_footer .row {
+        text-align: center;
+    }
+
+    footer .top_footer .col-lg-3,
+    footer .top_footer .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    footer .bottom_footer .float_left,
+    footer .bottom_footer .float_right {
+        text-align: center;
+        float: none;
+    }
+}
+
+/* our page footer */
+.linked-image {
+    position: relative;
+    display: inline-block;
+}
+
+.linked-image img {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    color: white;
+
+    /* Semi-transparent background for readability */
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.overlay-text .company-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.overlay-text .followers-count {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.overlay-text .follow-btn {
+    padding: 5px 10px;
+    background-color: #1877f2;
+    /* Facebook blue color */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.overlay-text .follow-btn:hover {
+    background-color: #145dbf;
+    /* Darken on hover */
+}
+
+
+
+
+/* new testimonials */
+.testimonial-section {
+    background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.616));
+    padding: 50px 0;
+
+}
+
+/* Section Title */
+.section-title h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    text-align: left;
+    padding: 15px;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: #707070;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0c0c0c;
+    text-transform: capitalize;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 30px;
+    color: #007bff;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    color: #0056b3;
+}
+
+/* Values Container */
+.values-container {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.values-tabs .nav-link {
+    color: #020202;
+    padding: 10px 20px;
+    font-weight: 500;
+    border-radius: 0;
+    background: none;
+}
+
+.values-tabs .nav-link.active {
+    color: #ffffff;
+    background-color: #E87B1C;
+    font-weight: 600;
+}
+
+.values-content .tab-pane {
+    padding: 20px;
+    font-size: 15px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.heading-with-icon {
+    color: white;
+}
+
+.advisor-description {
+    color: rgb(236, 82, 10);
+}
+
+
+/* heading */
